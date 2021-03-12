@@ -57,21 +57,21 @@ class GameControl {
         try {
             this.snake.X = X;
             this.snake.Y = Y;
-        }catch (e) {
-            alert(e.message+'GAME OVER!');
+        } catch (e) {
+            alert(e.message + 'GAME OVER!');
             this.isLive = false;
         }
 
-        this.isLive && setTimeout(this.run.bind(this), 250 - (this.scorePanel.level-1)*30);
+        this.isLive && setTimeout(this.run.bind(this), 250 - (this.scorePanel.level - 1) * 30);
 
     }
 
-    checkEat(X: number, Y: number){
-         if(X === this.food.X && Y === this.food.Y){
-             this.food.change();
-             this.scorePanel.addScore();
-             this.snake.addBody();
-         }
+    checkEat(X: number, Y: number) {
+        if (X === this.food.X && Y === this.food.Y) {
+            this.food.change();
+            this.scorePanel.addScore();
+            this.snake.addBody();
+        }
     }
 
 }

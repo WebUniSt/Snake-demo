@@ -1,9 +1,8 @@
-
 class ScorePanel {
     score = 0;
     level = 1;
     scoreEle: HTMLElement;
-    levelEle:HTMLElement;
+    levelEle: HTMLElement;
 
     maxLevel: number;
     upScore: number;
@@ -12,19 +11,19 @@ class ScorePanel {
         this.scoreEle = document.getElementById('score')!;
         this.levelEle = document.getElementById('level')!;
         this.maxLevel = maxLevel;
-        this.upScore =upScore;
+        this.upScore = upScore;
     }
 
     addScore() {
         this.score++;
         this.scoreEle.innerHTML = this.score + '';
-        if (this.score % this.upScore === 0){
+        if (this.score % this.upScore === 0) {
             this.leverUp();
         }
     }
 
     leverUp() {
-        if (this.level < this.maxLevel){
+        if (this.level < this.maxLevel) {
             this.levelEle.innerHTML = ++this.level + '';
         }
     }

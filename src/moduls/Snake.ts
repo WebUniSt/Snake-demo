@@ -27,11 +27,11 @@ class Snake {
             throw new Error('蛇撞墙了!')
         }
 
-        if(this.bodies[1] && (this.bodies[1] as HTMLElement).offsetLeft === value){
-            if(value > this.X){
+        if (this.bodies[1] && (this.bodies[1] as HTMLElement).offsetLeft === value) {
+            if (value > this.X) {
                 value = this.X - 10;
-            }else {
-                value = this.X +10;
+            } else {
+                value = this.X + 10;
             }
         }
 
@@ -48,11 +48,11 @@ class Snake {
             throw new Error('蛇撞墙了!')
         }
 
-        if(this.bodies[1] && (this.bodies[1] as HTMLElement).offsetTop === value){
-            if(value > this.Y){
+        if (this.bodies[1] && (this.bodies[1] as HTMLElement).offsetTop === value) {
+            if (value > this.Y) {
                 value = this.Y - 10;
-            }else {
-                value = this.Y +10;
+            } else {
+                value = this.Y + 10;
             }
         }
 
@@ -66,18 +66,18 @@ class Snake {
     }
 
     moveBody() {
-        for (let i=this.bodies.length-1; i>0; i--){
-            let X = (this.bodies[i-1] as HTMLElement).offsetLeft;
-            let Y = (this.bodies[i-1] as HTMLElement).offsetTop;
+        for (let i = this.bodies.length - 1; i > 0; i--) {
+            let X = (this.bodies[i - 1] as HTMLElement).offsetLeft;
+            let Y = (this.bodies[i - 1] as HTMLElement).offsetTop;
             (this.bodies[i] as HTMLElement).style.left = X + 'px';
             (this.bodies[i] as HTMLElement).style.top = Y + 'px';
         }
     }
 
-    checkHeadBody(){
-        for(let i=1; i<this.bodies.length; i++){
+    checkHeadBody() {
+        for (let i = 1; i < this.bodies.length; i++) {
             let bd = this.bodies[i] as HTMLElement;
-            if(this.X === bd.offsetLeft && this.Y === bd.offsetTop){
+            if (this.X === bd.offsetLeft && this.Y === bd.offsetTop) {
                 throw new Error('撞到自己了!');
             }
         }

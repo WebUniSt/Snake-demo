@@ -1,10 +1,10 @@
 import './style/index.less';
 
-// import Food from "./moduls/Food";
-//
-// import ScorePanel from "./moduls/ScorePanel";
-//
-// import Snake from "./moduls/Snake";
+import Food from "./moduls/Food";
+
+import ScorePanel from "./moduls/ScorePanel";
+
+import Snake from "./moduls/Snake";
 
 import GameControl from "./moduls/GameControl";
 
